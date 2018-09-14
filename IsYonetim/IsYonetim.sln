@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsYonetim", "IsYonetim.csproj", "{D8E37CE1-2C2C-48B1-8BCD-8C6E438A52CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{DC38501B-B621-4C3C-8622-0084614B05AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8E37CE1-2C2C-48B1-8BCD-8C6E438A52CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E37CE1-2C2C-48B1-8BCD-8C6E438A52CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E37CE1-2C2C-48B1-8BCD-8C6E438A52CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E37CE1-2C2C-48B1-8BCD-8C6E438A52CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC38501B-B621-4C3C-8622-0084614B05AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC38501B-B621-4C3C-8622-0084614B05AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC38501B-B621-4C3C-8622-0084614B05AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC38501B-B621-4C3C-8622-0084614B05AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E108C2D-6E87-4796-8904-84DA59673E6C}
+	EndGlobalSection
+EndGlobal
