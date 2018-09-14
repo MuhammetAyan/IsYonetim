@@ -14,11 +14,22 @@ namespace Database
     
     public partial class Task
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Task()
+        {
+            this.Task1 = new HashSet<Task>();
+        }
+    
         public int id { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
         public System.DateTime BeginTime { get; set; }
         public System.DateTime EndTime { get; set; }
         public int State { get; set; }
+        public Nullable<int> ParentTaskId { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Task> Task1 { get; set; }
+        public virtual Task Task2 { get; set; }
     }
 }

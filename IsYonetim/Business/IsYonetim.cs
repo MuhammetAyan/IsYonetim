@@ -9,6 +9,6 @@ namespace IsYonetim.Business
 {
     class DatabaseEntities
     {
-        public static IsYonetimEntities Bitirme { get { return new IsYonetimEntities(); } }
+        public static IsYonetimEntities IsYonetim { get { return new IsYonetimEntities(); } }
     }
 }

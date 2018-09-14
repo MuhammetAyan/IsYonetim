@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="621fc02e98d24436bd5dd2ed213120c9" Name="Diagram1">
         <EntityTypeShape EntityType="IsYonetimModel.Task" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="IsYonetimModel.FK_Task_Task" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
