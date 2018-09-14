@@ -13,10 +13,10 @@ namespace Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class IsYonetimEntities : DbContext
+    public partial class IsYonetimEntities1 : DbContext
     {
-        public IsYonetimEntities()
-            : base("name=IsYonetimEntities")
+        public IsYonetimEntities1()
+            : base("name=IsYonetimEntities1")
         {
         }
     

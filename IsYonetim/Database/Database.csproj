@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -49,49 +50,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data.Context.cs">
+    <Compile Include="IsYonetim.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Data.Context.tt</DependentUpon>
+      <DependentUpon>IsYonetim.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data.cs">
+    <Compile Include="IsYonetim.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Data.tt</DependentUpon>
+      <DependentUpon>IsYonetim.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data.Designer.cs">
+    <Compile Include="IsYonetim.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Data.edmx</DependentUpon>
+      <DependentUpon>IsYonetim.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task.cs">
-      <DependentUpon>Data.tt</DependentUpon>
+      <DependentUpon>IsYonetim.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Data.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Data.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Data.edmx.diagram">
-      <DependentUpon>Data.edmx</DependentUpon>
+    <EntityDeploy Include="IsYonetim.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IsYonetim.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="IsYonetim.edmx.diagram">
+      <DependentUpon>IsYonetim.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data.Context.tt">
+    <Content Include="IsYonetim.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Data.Context.cs</LastGenOutput>
-      <DependentUpon>Data.edmx</DependentUpon>
+      <DependentUpon>IsYonetim.edmx</DependentUpon>
+      <LastGenOutput>IsYonetim.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Data.tt">
+    <Content Include="IsYonetim.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Data.edmx</DependentUpon>
-      <LastGenOutput>Data.cs</LastGenOutput>
+      <DependentUpon>IsYonetim.edmx</DependentUpon>
+      <LastGenOutput>IsYonetim.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

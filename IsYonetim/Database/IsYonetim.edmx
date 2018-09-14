@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="IsYonetimModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="IsYonetimModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Task">
           <Key>
             <PropertyRef Name="id" />
@@ -29,7 +29,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IsYonetimModelStoreContainer">
+        <EntityContainer Name="IsYonetimModel1StoreContainer">
           <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Task_Task" Association="Self.FK_Task_Task">
             <End Role="Task" EntitySet="Task" />
@@ -39,7 +39,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="IsYonetimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="IsYonetimModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Task">
           <Key>
             <PropertyRef Name="id" />
@@ -51,19 +51,12 @@
           <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="State" Type="Int32" Nullable="false" />
           <Property Name="ParentTaskId" Type="Int32" />
-          <NavigationProperty Name="Task1" Relationship="IsYonetimModel.FK_Task_Task" FromRole="Task" ToRole="Task1" />
-          <NavigationProperty Name="Task2" Relationship="IsYonetimModel.FK_Task_Task" FromRole="Task1" ToRole="Task" />
+          <NavigationProperty Name="Task1" Relationship="Self.FK_Task_Task" FromRole="Task" ToRole="Task1" />
+          <NavigationProperty Name="Task2" Relationship="Self.FK_Task_Task" FromRole="Task1" ToRole="Task" />
         </EntityType>
-        <EntityContainer Name="IsYonetimEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Task" EntityType="Self.Task" />
-          <AssociationSet Name="FK_Task_Task" Association="IsYonetimModel.FK_Task_Task">
-            <End Role="Task" EntitySet="Task" />
-            <End Role="Task1" EntitySet="Task" />
-          </AssociationSet>
-        </EntityContainer>
         <Association Name="FK_Task_Task">
-          <End Type="IsYonetimModel.Task" Role="Task" Multiplicity="0..1" />
-          <End Type="IsYonetimModel.Task" Role="Task1" Multiplicity="*" />
+          <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+          <End Role="Task1" Type="Self.Task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Task">
               <PropertyRef Name="id" />
@@ -73,22 +66,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="IsYonetimEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Task" EntityType="Self.Task" />
+          <AssociationSet Name="FK_Task_Task" Association="Self.FK_Task_Task">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="Task1" EntitySet="Task" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="IsYonetimModelStoreContainer" CdmEntityContainer="IsYonetimEntities">
+        <EntityContainerMapping StorageEntityContainer="IsYonetimModel1StoreContainer" CdmEntityContainer="IsYonetimEntities1">
           <EntitySetMapping Name="Task">
-            <EntityTypeMapping TypeName="IsYonetimModel.Task">
+            <EntityTypeMapping TypeName="IsYonetimModel1.Task">
               <MappingFragment StoreEntitySet="Task">
-                <ScalarProperty Name="ParentTaskId" ColumnName="ParentTaskId" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
                 <ScalarProperty Name="EndTime" ColumnName="EndTime" />
                 <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ParentTaskId" ColumnName="ParentTaskId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -106,7 +106,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
