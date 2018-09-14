@@ -28,7 +28,6 @@ namespace IsYonetim.Business
         public static TaskModel GetTaskRecurive(int? id)
         {
             var db = DatabaseEntities.IsYonetim;
-            
         }
     }
 }
