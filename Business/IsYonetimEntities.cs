@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Database;
 
-namespace IsYonetim.Business
+namespace Business
 {
-    class DatabaseEntities
+    public static class IsYonetim
     {
-        public static IsYonetimEntities Bitirme { get { return new IsYonetimEntities(); } }
+        public static IsYonetimEntities DataBase { get { return new IsYonetimEntities(); } }
     }
 }

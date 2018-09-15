@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5e73a10c706d4dfeb2828a4cadd84ec4" Name="Diagram1">
-        <EntityTypeShape EntityType="IsYonetimModel1.Task" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="IsYonetimModel1.FK_Task_Task" ManuallyRouted="false" />
+      <Diagram DiagramId="20e193e671704a8a890850c72ba9f074" Name="Diagram1">
+        <EntityTypeShape EntityType="IsYonetimModel.Task" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="IsYonetimModel.FK_Task_Task" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

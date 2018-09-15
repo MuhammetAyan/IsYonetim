@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="IsYonetimModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="IsYonetimModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Task">
           <Key>
             <PropertyRef Name="id" />
@@ -29,17 +29,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IsYonetimModel1StoreContainer">
+        <EntityContainer Name="IsYonetimModelStoreContainer">
           <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Task_Task" Association="Self.FK_Task_Task">
             <End Role="Task" EntitySet="Task" />
             <End Role="Task1" EntitySet="Task" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="IsYonetimModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="IsYonetimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Task">
           <Key>
             <PropertyRef Name="id" />
@@ -66,11 +67,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IsYonetimEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Task" EntityType="Self.Task" />
+        <EntityContainer Name="IsYonetimEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tasks" EntityType="Self.Task" />
           <AssociationSet Name="FK_Task_Task" Association="Self.FK_Task_Task">
-            <End Role="Task" EntitySet="Task" />
-            <End Role="Task1" EntitySet="Task" />
+            <End Role="Task" EntitySet="Tasks" />
+            <End Role="Task1" EntitySet="Tasks" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -78,9 +79,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="IsYonetimModel1StoreContainer" CdmEntityContainer="IsYonetimEntities1">
-          <EntitySetMapping Name="Task">
-            <EntityTypeMapping TypeName="IsYonetimModel1.Task">
+        <EntityContainerMapping StorageEntityContainer="IsYonetimModelStoreContainer" CdmEntityContainer="IsYonetimEntities">
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="IsYonetimModel.Task">
               <MappingFragment StoreEntitySet="Task">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -106,7 +107,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

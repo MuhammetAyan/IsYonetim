@@ -45,16 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\IsYonetim.cs" />
-    <Compile Include="Business\TaskBusiness.cs" />
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\NewTaskModel.cs" />
-    <Compile Include="Models\TaskModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -80,10 +76,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Database\Database.csproj">
-      <Project>{dc38501b-b621-4c3c-8622-0084614b05aa}</Project>
-      <Name>Database</Name>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{b5afe68b-9a1e-4dad-b8d4-c42c9d8c618c}</Project>
+      <Name>Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{be80fe6e-4e5d-404d-aa15-40c5b6e18703}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

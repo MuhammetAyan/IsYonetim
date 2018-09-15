@@ -13,10 +13,10 @@ namespace Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class IsYonetimEntities1 : DbContext
+    public partial class IsYonetimEntities : DbContext
     {
-        public IsYonetimEntities1()
-            : base("name=IsYonetimEntities1")
+        public IsYonetimEntities()
+            : base("name=IsYonetimEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Task> Task { get; set; }
+        public virtual DbSet<Task> Tasks { get; set; }
     }
 }
