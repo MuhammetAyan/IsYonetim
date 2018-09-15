@@ -10,7 +10,7 @@ namespace Business
     public static class TaskBusiness
     {
 
-        public static void NewTask(NewTaskModel task)
+        public static void Create(NewTaskModel task)
         {
             var db = IsYonetim.DataBase;
             Task dbTask = new Task
@@ -26,7 +26,7 @@ namespace Business
             db.SaveChanges();
         }
 
-        public static List<TaskModel> GetTaskChilds(int parentId)
+        public static List<TaskModel> GetTaskChilds(int? parentId)
         {
             List<TaskModel> taskModels = new List<TaskModel>();
             var db = IsYonetim.DataBase;
@@ -47,6 +47,43 @@ namespace Business
                 taskModels.Add(taskModel);
             }
             return taskModels;
+        }
+
+        public static void Update(TaskModel newModel)
+        {
+            var db = IsYonetim.DataBase;
+            var dbTask = db.Tasks.FirstOrDefault(x=>x.id == newModel.Id);
+            SwapBusiness.Task(ref dbTask, newModel);
+            db.Tasks.Add(dbTask);
+            db.SaveChanges();
+        }
+
+        public static void DeleteTask(int id)
+        {
+            try
+            {
+                var db = IsYonetim.DataBase;
+                var dbTask = db.Tasks.FirstOrDefault(x => x.id == id);
+                db.Tasks.Remove(dbTask);
+                db.SaveChanges();
+            }
+            catch
+            {
+            }
+        }
+
+        public static void DeleteTasks(int[] ids)
+        {
+            try
+            {
+                var db = IsYonetim.DataBase;
+                var dbTask = db.Tasks.Where(x => ids.Contains(x.id));
+                db.Tasks.RemoveRange(dbTask);
+                db.SaveChanges();
+            }
+            catch
+            {
+            }
         }
     }
 

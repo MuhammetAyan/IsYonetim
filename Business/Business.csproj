@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="IsYonetimEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwapBusiness.cs" />
     <Compile Include="TaskBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
